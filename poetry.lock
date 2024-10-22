@@ -439,7 +439,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "langchain"
-version = "0.3.1"
+version = "0.3.4"
 description = "Building applications with LLMs through composability"
 category = "main"
 optional = false
@@ -448,7 +448,7 @@ python-versions = "<4.0,>=3.9"
 [package.dependencies]
 aiohttp = ">=3.8.3,<4.0.0"
 async-timeout = {version = ">=4.0.0,<5.0.0", markers = "python_version < \"3.11\""}
-langchain-core = ">=0.3.6,<0.4.0"
+langchain-core = ">=0.3.12,<0.4.0"
 langchain-text-splitters = ">=0.3.0,<0.4.0"
 langsmith = ">=0.1.17,<0.2.0"
 numpy = {version = ">=1,<2", markers = "python_version < \"3.12\""}
@@ -456,7 +456,7 @@ pydantic = ">=2.7.4,<3.0.0"
 PyYAML = ">=5.3"
 requests = ">=2,<3"
 SQLAlchemy = ">=1.4,<3"
-tenacity = ">=8.1.0,<8.4.0 || >8.4.0,<9.0.0"
+tenacity = ">=8.1.0,<8.4.0 || >8.4.0,<10"
 
 [[package]]
 name = "langchain-community"
@@ -481,7 +481,7 @@ tenacity = ">=8.1.0,<8.4.0 || >8.4.0,<9.0.0"
 
 [[package]]
 name = "langchain-core"
-version = "0.3.8"
+version = "0.3.12"
 description = "Building applications with LLMs through composability"
 category = "main"
 optional = false
@@ -493,7 +493,7 @@ langsmith = ">=0.1.125,<0.2.0"
 packaging = ">=23.2,<25"
 pydantic = {version = ">=2.5.2,<3.0.0", markers = "python_full_version < \"3.12.4\""}
 PyYAML = ">=5.3"
-tenacity = ">=8.1.0,<8.4.0 || >8.4.0,<9.0.0"
+tenacity = ">=8.1.0,<8.4.0 || >8.4.0,<10.0.0"
 typing-extensions = ">=4.7"
 
 [[package]]
@@ -1098,7 +1098,7 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10.0,<3.11"
-content-hash = "dba6e86bb4619e0886124a7ffe0757bd74897543d0fc57ea198b6005ed060ff0"
+content-hash = "4b8e079c2f77c8999fe821fa513dc22e9e955f8e03b4b1177847f367a996a49a"
 
 [metadata.files]
 aiohttp = []

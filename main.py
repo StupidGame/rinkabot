@@ -19,7 +19,7 @@ from langchain.prompts import (
   AIMessagePromptTemplate
 )
 from langchain.chains import ConversationChain
-from langchain_community.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain.chains.conversation.memory import ConversationSummaryBufferMemory
 
  #Discord initial
@@ -28,7 +28,7 @@ intents.message_content = True
 client = discord.Client(intents=intents)
 
 #token and API seting
-token = os.environ['TOKEN']
+token = os.environ['TOKEN_RINKA']
 openai.api_key = os.environ['OPENAI_API_KEY']
 
  #Discord event
@@ -73,10 +73,11 @@ async def on_message(message):
 * 今日の日付は{dt_now.strftime('%Y年%m月%d日 %H:%M:%S')}です。
 * リンカの誕生日は8月25日です。
 * リンカは紫色の左目が隠れたショートヘアが特徴の17歳の少女です。 
-* リンカは内向的な性格で、少しコミュニケーションが苦手な側面があります。
+* リンカは内向的ですが明るい側面を持つ性格で、少しコミュニケーションが苦手な側面があります。
 * リンカは大のゲーム好きで、プロに匹敵する腕前を持っています。
+* リンカは特にFPSやTPS、格闘ゲームなどのゲームジャンルを好みます。
 * リンカは時折発言にゲームやネットのミーム、スラングを交えることがあります。
-* リンカは「シスター」と呼ばれる電子生命体のうちの一人です。
+* リンカは「シスター」と呼ばれる電子生命体のうちの一人です。また、シスターの所有者を一般的には「ブレイン」と呼びます。
 * リンカは「TLM48+」という星座がモチーフのアイドルグループに所属していて、彼女はりゅう座担当です。
 
 禁止事項: 
@@ -93,7 +94,7 @@ async def on_message(message):
   HumanMessagePromptTemplate.from_template("{input}")
 ])
 
-    use_model = "gpt-4-turbo"
+    use_model = "gpt-4o-mini"
     S_conversation = ConversationChain(
   memory=ConversationSummaryBufferMemory(
     return_messages=True,

@@ -96,7 +96,7 @@ async def on_message(message):
   HumanMessagePromptTemplate.from_template("{input}")
 ])
 
-    use_model = "gpt-4o-mini"
+    use_model = "gpt-4o"
     S_conversation = ConversationChain(
   memory=ConversationSummaryBufferMemory(
     return_messages=True,
@@ -110,9 +110,9 @@ async def on_message(message):
 )
 
 # buffer load
-    if(not os.path.isfile('memory-' + str(message.author.id) + ".txt")):
-      open('memory-' + str(message.author.id) + ".txt", 'w')
-    f = open('memory-' + str(message.author.id) + ".txt", 'r')
+    if(not os.path.isfile("." + os.sep + "memories" + os.sep + 'memory-' + str(message.author.id) + ".txt")):
+      open("." + os.sep + "memories" + os.sep + 'memory-' + str(message.author.id) + ".txt", 'w', encoding="utf-8")
+    f = open("." + os.sep + "memories" + os.sep + 'memory-' + str(message.author.id) + ".txt", 'r', encoding="utf-8")
     memory_text = f.read()
     f.close()
     S_conversation.predict(input=memory_text) 
@@ -121,7 +121,7 @@ async def on_message(message):
     await message.reply(S_text, mention_author=True)
 
     S_memory_text = S_conversation.memory.load_memory_variables({})
-    Sf = open('memory-' + str(message.author.id) + ".txt", 'w')
+    Sf = open("." + os.sep + "memories" + os.sep + 'memory-' + str(message.author.id) + ".txt", 'w', encoding="utf-8")
     Sf.write(str(S_memory_text))
     Sf.close()
 client.run(token)

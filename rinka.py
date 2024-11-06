@@ -44,7 +44,7 @@ async def on_message(message):
       async with message.channel.typing():
         if(not os.path.isfile("settings.txt")):
           open("settings.txt", 'w', encoding="utf-8")
-        f = open("settings.txt", 'r', encoding="utf-8").format(username=message.author.display_name, nowtime=dt_now.strftime('%Y年%m月%d日 %H:%M:%S'))
+        f = str(open("settings.txt", 'r', encoding="utf-8")).format(username=message.author.display_name, nowtime=dt_now.strftime('%Y年%m月%d日 %H:%M:%S'))
         system_settings = f.read()
         f.close()
         prompt = ChatPromptTemplate.from_messages([

@@ -57,7 +57,7 @@ async def on_message(message):
         S_conversation = ConversationChain(
         memory=ConversationSummaryBufferMemory(
                 return_messages=True,
-                llm=ChatOpenAI(model_name=use_model, temperature=0.75),
+                llm=ChatOpenAI(model_name=use_model),
                 max_token_limit=1000
                 ),
 

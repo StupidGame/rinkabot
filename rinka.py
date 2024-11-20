@@ -6,9 +6,6 @@ import openai
 import signal
 
 import datetime
-
-dt_now = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
-
  #langchain import
 from langchain.prompts import (
   ChatPromptTemplate, 
@@ -41,7 +38,9 @@ async def on_message(message):
     if message.author.bot == True:
         return
     elif message.content.startswith('!rinka ') or message.content.startswith('!rinka　'):
+      print(input)
       async with message.channel.typing():
+        dt_now = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
         if(not os.path.isfile("settings.txt")):
           open("settings.txt", 'w', encoding="utf-8")
         f = open("settings.txt", 'r', encoding="utf-8")
